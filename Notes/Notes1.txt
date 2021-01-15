@@ -6,6 +6,10 @@ Installed 2 extensions into VS Code:
     - Simple React Snippets - I believe it assists in writing react code via auto-complete.
     - Prettier (Code formatter that auto-formats code on save.  I don't like tools like this, but I'll stick to it until I'm not a total react/js noob)
         - In User Settings of VS Code, set editor.formatOnSave to true.
+			- File -> Preferences -> Settings -> Search for editor.formatOnSave (in both the Workspace AND User tabs)
+		- I also set prettier-vscode as the default formatter
+			- File -> Preferences -> Settings -> Search for defaultFormatter (in both the Workspace AND User tabs)
+			- Select esbenp.prettier-vscode from the dropdown list (I wish I could just type in my settings like Mac can apparantly do lol)
 
 The tutorial has an outdated way to create a react app.  Use this command instead of his instructions:
     'npx create-react-app my-app'

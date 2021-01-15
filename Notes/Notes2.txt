@@ -1,3 +1,36 @@
 Tutorial source: https://youtu.be/Ke90Tje7VS0?list=WL&t=1344
 This Notes document covers everything (and more) about the tutorial source from time: 00:22:30 to time: xx:xx:xx
 
+First thing past 22:30 is installed Bootstrap with the command:
+    npm i bootstrap@4.1.1
+    'i' means 'install'
+
+bootstrap - A css library that gives our applications a "modern look and feel".
+
+Generating code with React Snippets installed in VSCode:
+    -typing imrc and hitting enter on the intellisense dialog that shows up will import React for you.
+        -Exact Code: import React, { Component } from 'react';
+    - typing cc and hitting enter on the intellisense dialog that shows up will generate a basic class (and export statement).
+        - create a new .jsx file in a react-installed npm-enabled folder and try it out to see.
+    - Food for thought: This is what turns VSCode from a text editor to partial IDE.  In Eclipse for Java, you would "Create a class", and it would
+        do this stuff for you.  You usually would write the "extends" part manually though.
+
+27:15:
+    - Generate our first Component, counter.jsx.
+    - When we import counter into index.js... it's good to note that you don't need curly braces around Counter ({Counter}), because it's a default export.
+        - You can see this curly brace syntax around Componentin counter.jsx.
+
+31:00
+    - Renders Counter component with js6... "extending the html vocabulary"
+        - "Where we put the Counter element, we get the output of the Counter component, which is determined by what is returned by the render() method."
+
+33:12 starts to talk about how JS owns the "return" statement syntax:
+    - JS expects 'return' statement to be all on one line, and will secretly add a semi-colon at the end of the same line as the return statement.
+        - This is because of automatic-semi-colon insertion.  That is Un-Java like, where a semi-colon is needed  to explictly end the statement, 
+            and Java doesn't ultimately care about newlines (treats a newline the same as a space ' ').
+    - To make a return statement consider more than one line, you must wrap your statement in parantheses ( ).
+
+34:47 explains how you can avoid having an extra div using React Fragments.
+    - Also explains multi-cursor editing with VSCode with [ctrl] + D on Windows.
+        
+Left off tutorial on 35:54.
