@@ -1,4 +1,4 @@
-Tutorial source: https://youtu.be/Ke90Tje7VS0?list=WL
+TuBtorial source: https://youtu.be/Ke90Tje7VS0?list=WL
 To start the react app, run 'npm start' inside of the project folder.  The project will start at localhost:3000
 
 Installed 2 extensions into VS Code:
@@ -105,5 +105,3 @@ index.html:
         Up until this point of the notes, you should see old/index.old1.js and old/index.old1.html for working examples.
 
 Left off at 22:30 in tutorial
-
-t
