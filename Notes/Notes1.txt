@@ -1,8 +1,9 @@
-TuBtorial source: https://youtu.be/Ke90Tje7VS0?list=WL
+Tutorial source: https://youtu.be/Ke90Tje7VS0?list=WL
 To start the react app, run 'npm start' inside of the project folder.  The project will start at localhost:3000
+This Notes document covers everything (and more) about the tutorial source from time: 00:00:00 to time: 00:22:25
 
 Installed 2 extensions into VS Code:
-    - Simple React Snippets - I believe it helps write react code.
+    - Simple React Snippets - I believe it assists in writing react code via auto-complete.
     - Prettier (Code formatter that auto-formats code on save.  I don't like tools like this, but I'll stick to it until I'm not a total react/js noob)
         - In User Settings of VS Code, set editor.formatOnSave to true.
 
@@ -21,28 +22,31 @@ This command doesn't just create a react app.  It does the following:
         Pro: It's easy to get things running so I can focus on code!!
         Con: I don't truly know what's going on, and there's many files mixed in with my code that I don't understand (but that's the norm, and most frustrating part about my career lol)
 
+If this project is cloned via Git, instead of just running 'npm start'.... 'npm install' will have to be run first to populate the node_modules folder
+    (install dependencies).  Much like ./gradlew installs.
+
 What is React?  
     1:05 of the video
-    - React is a JS library for building fast and interactive user interfaces.  It was dev'd in facebook in 2011.  Most popular library for building UI.
-        -Angular and View are alternatives to  React.
+    - React is a JS library for building fast and interactive user interfaces.  It was dev'd by facebook in 2011.  Most popular library for building UI.
+        -Angular and Vue are alternatives to  React.
     - At the heart of React applications are components.  A component is a piece of the UI.  You build a bunch of independant, isolated and reusable components,
-        and then composte them to build complex UI.
+        and then compose them to build complex UI.
     - Every React application has at least 1 component, which is referred to as the Root component.  This component represents the entire application,
         and contains other child components.  Every React application is a tree of components.
-    -  See example at 2:24 of video.
+    - See example at 2:24 of video.
     - A component is typically implemented as a JS class that has some state and render method.
         - syntax for state looks like "state = { }" 
         - state is the data that we want to display when the component is rendered.
         - the render method is responsible for describing what the UI should look like.  The output of this method is a react element,
             which is a simple, plain JS object that maps to a DOM element in-memory (AKA "Virtual DOM"). 
             - This DOM is cheap to create, since it's unrendered and exists solely in memory.
-        - When we change the state of a component (In the "virtual" DOM), we get a new React element.  It compares the element to it's previous one,
-            keeps track of changes, then updates part of the "Real" DOM to keep it in sync with the virtual DOM.
+        - When we change the state of a component (In the "virtual" DOM), we get a new React element (as in, at runtime, not as in a new Class Type).  
+            It compares the element to it's previous one, keeps track of changes, then updates part of the "Real" DOM to keep it in sync with the virtual DOM.
         - This means there is no need to work with the DOM API in-browser to create and manipulate the real DOM.  React does that for you.
             As a coder, you only have to worry about the "Virtual" DOM.  You don't need to add eventListeners, query the DOM for an element, etc.
-            Although, as a JS super-newb, that might not be a bad skill to know how to do.  I DID used to do things like that in the past, I DID 
+            Although, as a JS super-newb, that might not be a bad skill to know how to do.  I DID do things like that in the past- I did 
             learn JQuery, but I never got past the point of novice (imo).
-        - All you have to do to update the Real DOM is change the state of React componenets, and React will do the rest.
+        - All you have to do to update the Real DOM is change the state of React componenets, and React will do the rest (¿Q: When you call ReactDOM.render() ?)
     - React vs Angular:
         - Both similar in component-based architecture.
         - Angular is a "framework"/complete solution, while React is a Library.
@@ -78,7 +82,7 @@ Modern JS Features often used in React rundown:
 index.js is the entrypoint into the application.
 
 ES6:
-"import React from 'react';
+"import React from 'react';"
     - 'react' is the module
     - React is the object being imported from that module.
     - We don't use the React object directly, but the ES6 markup gets compiled into a "React.createElement" call.
@@ -89,19 +93,19 @@ ES6:
 Virtual DOM:
     Lightweight, in-memory representation of the UI.
         - Talked about at 18:45
-        - He talked about it earlier on in vid, but as of right now it's not in my notes.
         - Whenever the state of the element changes, React will get a new React element.  Then React will compare element with previous element.
             Then it will reach out to the real DOM and update it accordingly.
 
 index.html:
     - <div id="root"> </div>
-        - "Is the container of the React application"
+        - "Is the container of the React application", aka the base component.
 
 21:00 in the video: 
-    - "In a realworld application, instead of rendering a single element to the DOM, we'll render our "app component".
+    - "In a realworld application, instead of rendering a single element to the DOM, we'll render our 'app component'".
         This app component is the root component of our application.  It includes children such as nav bar, side bar, profile, and what-not.
         We'll have a tree of components, which will eventually produce complex markup."
     - This means that, in the future of the tutorial, index.js will change durastically, possibly making these notes partially obsolete.
         Up until this point of the notes, you should see old/index.old1.js and old/index.old1.html for working examples.
+        - I've turned this into a GIT repo.  In a future commit, i will delete the old/ files.
 
-Left off at 22:30 in tutorial
+Left off at 22:25 in tutorial
