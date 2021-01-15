@@ -1,4 +1,5 @@
 // All comments are supplementary notes to Notes.txt.  More in-depthness can be found there!
+// Coincides with index.old1.html.
 
 // 'react' is the module, 'React' is the object being imported from the module.
 import React from 'react';
@@ -7,7 +8,7 @@ import ReactDOM from 'react-dom';
 // jsx expression
 // Babel will then compile this into React.createElement
 // This is why you must: import React from 'react'
-// Babel will compile this code into:
+// The equivalent of this code using React object is:
 //  var element = React.createElement("h1", null, "Hello World");
 //
 // This element is a part of the "Virtual DOM"

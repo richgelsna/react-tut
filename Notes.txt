@@ -1,0 +1,107 @@
+Tutorial source: https://youtu.be/Ke90Tje7VS0?list=WL
+To start the react app, run 'npm start' inside of the project folder.  The project will start at localhost:3000
+
+Installed 2 extensions into VS Code:
+    - Simple React Snippets - I believe it helps write react code.
+    - Prettier (Code formatter that auto-formats code on save.  I don't like tools like this, but I'll stick to it until I'm not a total react/js noob)
+        - In User Settings of VS Code, set editor.formatOnSave to true.
+
+The tutorial has an outdated way to create a react app.  Use this command instead of his instructions:
+    'npx create-react-app my-app'
+    note: dangerous, because we're not using version 1.5.2 like Mosh uses in video.
+This command doesn't just create a react app.  It does the following:
+    - Installs a 'lightweight Development Server'... 
+        I think he means a webserver with little-to-no configurability and serves up static code, suitable for development purposes.
+    - Webpack
+        "For bundling our files"
+    - Babel
+        "For compiling js code"
+    - "As well as a bunch of other tools"
+        The whole point is to set up an environment for you that takes 0 config.
+        Pro: It's easy to get things running so I can focus on code!!
+        Con: I don't truly know what's going on, and there's many files mixed in with my code that I don't understand (but that's the norm, and most frustrating part about my career lol)
+
+What is React?  
+    1:05 of the video
+    - React is a JS library for building fast and interactive user interfaces.  It was dev'd in facebook in 2011.  Most popular library for building UI.
+        -Angular and View are alternatives to  React.
+    - At the heart of React applications are components.  A component is a piece of the UI.  You build a bunch of independant, isolated and reusable components,
+        and then composte them to build complex UI.
+    - Every React application has at least 1 component, which is referred to as the Root component.  This component represents the entire application,
+        and contains other child components.  Every React application is a tree of components.
+    -  See example at 2:24 of video.
+    - A component is typically implemented as a JS class that has some state and render method.
+        - syntax for state looks like "state = { }" 
+        - state is the data that we want to display when the component is rendered.
+        - the render method is responsible for describing what the UI should look like.  The output of this method is a react element,
+            which is a simple, plain JS object that maps to a DOM element in-memory (AKA "Virtual DOM"). 
+            - This DOM is cheap to create, since it's unrendered and exists solely in memory.
+        - When we change the state of a component (In the "virtual" DOM), we get a new React element.  It compares the element to it's previous one,
+            keeps track of changes, then updates part of the "Real" DOM to keep it in sync with the virtual DOM.
+        - This means there is no need to work with the DOM API in-browser to create and manipulate the real DOM.  React does that for you.
+            As a coder, you only have to worry about the "Virtual" DOM.  You don't need to add eventListeners, query the DOM for an element, etc.
+            Although, as a JS super-newb, that might not be a bad skill to know how to do.  I DID used to do things like that in the past, I DID 
+            learn JQuery, but I never got past the point of novice (imo).
+        - All you have to do to update the Real DOM is change the state of React componenets, and React will do the rest.
+    - React vs Angular:
+        - Both similar in component-based architecture.
+        - Angular is a "framework"/complete solution, while React is a Library.
+        - React only takes care of rendering the View and making sure the View is in sync with the "State".
+        - This makes it so that React has a smaller API to learn.
+        - Drawback is that you need additional libraries to do more in-depth things.
+        - Angular often breaks from one version to another, since you don't control what the default libraries that Angular uses.
+
+
+Folders:
+    -node_modules:
+        - Holds 3rd party libraries, as well as react itself
+        - "We never have to touch this folder"
+    -public
+        - Holds public assets of our application
+    -src
+        - Holds compoenents (js code)
+
+12:00 in the video:
+    - He talks about using ES6 classes in JS... "class App extends Component {"
+    - Need to understand what classes are and how to use them.
+
+Modern JS Features often used in React rundown:
+    In 12:54:
+        - He demonstrates how markup language is returned in the render() function... this is called JSX, aka "javascript xml"
+        - Babel will take the jsx syntax and compile it into "plain" react javascript.
+            - Ironically, we're using modern js features to write react code for us, rather than us writing the react code.
+            - 13:55 is where the demonstration starts that makes this very clear.
+        - babeljs.io/repl will convert modern javascript code into classic js code.
+        - Q: Do you NEED the babel compiler to do this? Are there alternative compilers?  Browsers have no compatibility with ESX what-so-ever?
+                Where does Babel run... Server side, or in-browser?
+
+index.js is the entrypoint into the application.
+
+ES6:
+"import React from 'react';
+    - 'react' is the module
+    - React is the object being imported from that module.
+    - We don't use the React object directly, but the ES6 markup gets compiled into a "React.createElement" call.
+        - As a dev, I'm not a big fan of this, as it makes the file convoluted and hard to understand. The markup makes it hard to trace why we need the import,
+            and I would possibly want to remove the import since, from a stranger dev's POV, it might not seem like the import is needed or used in the file,
+            while it stealthily IS used.
+
+Virtual DOM:
+    Lightweight, in-memory representation of the UI.
+        - Talked about at 18:45
+        - He talked about it earlier on in vid, but as of right now it's not in my notes.
+        - Whenever the state of the element changes, React will get a new React element.  Then React will compare element with previous element.
+            Then it will reach out to the real DOM and update it accordingly.
+
+index.html:
+    - <div id="root"> </div>
+        - "Is the container of the React application"
+
+21:00 in the video: 
+    - "In a realworld application, instead of rendering a single element to the DOM, we'll render our "app component".
+        This app component is the root component of our application.  It includes children such as nav bar, side bar, profile, and what-not.
+        We'll have a tree of components, which will eventually produce complex markup."
+    - This means that, in the future of the tutorial, index.js will change durastically, possibly making these notes partially obsolete.
+        Up until this point of the notes, you should see old/index.old1.js and old/index.old1.html for working examples.
+
+Left off at 22:30 in tutorial
