@@ -31,6 +31,54 @@ Generating code with React Snippets installed in VSCode:
     - To make a return statement consider more than one line, you must wrap your statement in parantheses ( ).
 
 34:47 explains how you can avoid having an extra div using React Fragments.
+    - <React.Fragment> </React.Fragment> will let you build a componenet without creating an uneccesary div.
     - Also explains multi-cursor editing with VSCode with [ctrl] + D on Windows.
         
-Left off tutorial on 35:54.
+36:00: Start to talk about State, which helps add content dynamically.
+    - State is a 'special' property in an app component, and contains any data that the component needs.
+    - He replaces what used to be an <h1> tag around Hello World to <span>.
+         - The <span> tag is an inline container used to mark up a part of a text, or a part of a document.
+         - The <span> tag is easily styled by CSS or manipulated with JavaScript using the class or id attribute.
+         - The <span> tag is much like the <div> element, but <div> is a block-level element and <span> is an inline element.
+            - The div should be used to wrap sections of a document, while use spans to wrap small portions of text, images, etc.
+    - Replaces 'Hello World' with '{}' inside of our returned ES6-syntaxed return method of our component's render() function.
+        - Inside of '{}' you can add ANY valid javascript expressions.
+        - Our example does {this.state.count}... seems easy and straightforward to me.  My informal JS experience, 
+            I wouldn't have thought of writing this, but reading it makes sense.
+
+38:00 Add a new func called formatCount()
+    - Conditionally returns a string or a number....
+        -eugghhh <Throwup />
+    - used a js ternary operator 
+    - talks about "object destructuring", where he sets 'count' to a constant.... ?? He says he mentioned it earlier in the tutorial...
+        Here are 2 tutorial sources that gets more in-depth about destructuring:
+            - https://dmitripavlutin.com/javascript-object-destructuring/
+            - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+    
+39:35 "JSX Expressions are just like normal js objects... you can return them from a function, you can pass them into a function, 
+    you can also use them as a value of a constant or variable.
+
+42:16 Applying a class to span element...
+    - name of element (he mans attribute?) is not 'class', it's 'className'.
+    - these jsx elements get compiled into react elements, which are plain js objects.
+    - We  cannot use the 'class' property on an object, because that's a reserved keywrod in js.
+    - so, in jsx, instead of 'class', it's 'className'.
+
+42:48 He uses bootstrap classes.  
+    - Remember, from earlier in this Notes file, bootstrap is a css library that gives our applications a "modern look and feel".
+        - We also explicitly installed this... it did not come with the create-react project that we called in npm 
+            (although it's saved in our package.json file I believe, so when we git clone this project, bootstrap will install along with react-needed libraries).
+    - We use the "badge" and "badge-primary" classes on our span tag.
+        - It put a rounded blue circle around our "zero", and made it the font white.
+    - We then moved onto adding margining so that it's not so close to our "increment" button... which is cool.
+        - put class "m-2" in span.
+    - Additional adding classes to 'button' in this section... 
+    - Need to look up bootstrap doc to understand these classes more... maybe need to take a bootstrap tutorial.
+    - Applying styles:
+        - "For most part, it's best to use classes for performance and maintainability.
+        - "Might want to break rules if you knwo what you're doing and want to apply style to a specific elements."
+
+44:26: "In JSX, there's a 'style' attribute that you might want to apply to a plain js obj."
+    - This is a good section to review, because we delete the "styles" tag and won't use them for the rest of the tutorial.
+
+Left off at 46:38

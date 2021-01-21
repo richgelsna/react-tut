@@ -1,0 +1,3 @@
+This document is to keep track of everything that I DON'T know, and which requires research seperate from the tutorial.
+- CSS, CSS Classes, and Bootstrap
+- I could do some additional studying on HTML tags, and ES6 syntax beyond what is taught in the course.
