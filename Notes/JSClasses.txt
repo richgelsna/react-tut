@@ -1,0 +1,45 @@
+This file is a combination of research on how JS classes work, USED to work, and my personal thoughts on the good/bad points of them,
+as well as js objects.
+
+You cannot change the number or the type of properties of a class after you define the class. 
+In JavaScript, however, at run time you can add or remove properties of any object.
+
+In classes, it seems when you declare an object, it's local to the class, even without "let" keywords.
+    Remember, classes are a declaration (prototype) of an object, rather than an instantiation, so that seems to change the rules lol...
+
+It feels like you can think of JS classes as a blueprint of how you expect an object of that class to behave for predictability- however, once instantiated,
+    you can each individual object to behave how you want.  Where in Java, once you declare an object, it's set in stone to that classe's blueprint.  You can't modify 
+    the structure of the object (although you can modify the values that it contains).
+
+I feel as though a proper "Class" (aka Prototype) is like a signature or a contract that signs off on that object type.  
+    If you change an instantiated object of a class (AKA the model, the blueprint, the prototype, the contract), you're essentially changing the "Type" of the object.
+    Since you are allowed to chagne the structure of an object on-the-fly, I feel as though JS still isn't true OOP... Libraries and Frameworks can be tampered with
+    or broken, since you break the contract of how a certain object must be modeled.  Libraries and frameworks would then work unpredictably.
+
+One advantage to this is that it can be way cleaner to construct objects on the fly using JSON, or function object instantiation (link 1 sort of explains it).
+You don't need multiple files to put together a simple object, and the object can be simultaenously declared and used alongside the logic of your code!
+It's truly a double-edged sword though.  Information-hiding is scary to achieve, as a developer could accidentally overwrite an important piece of code in a downstream
+object type.
+
+Creating classes in js is a somewhat new feature, and link 2 goes through it and compares it to Java.  It's still kind of janky though, and I think it overlaps
+with function instantiation (Link 1).
+
+It's also good to know that JS achieves Object Orientation through something called Prototype-based programming.  See Link 3.
+
+It's weird how in some ways JS is the opposite to Java, which is class-based instead of prototype based.
+Quote on prototype based language:
+    You make prototype objects, and then make new instances. Objects are mutable in JavaScript, so we can augment the new instances, giving them new fields and methods.
+    These can then act as prototypes for even newer objects. We don't need classes to make lots of similar objects… Objects inherit from objects.
+    What could be more object oriented than that?
+
+In Java, everything IS an object, but you need to define a Class to do anything.  The class itself is an object, but at the end of the day, all objects
+    are defined from a Class, and either composed within a class or extended by a class.  Objects are not allowed to go "off the grid" (designed or altered on-the-fly).
+JS really feels like the wild-west, where anything goes, and anyone can do anything.
+Java feels like a "refined and proper" language, but can quickly become a beaurecratic nightmare because of the raw number of files you need to jump through
+    to make things function to the perfect theoretical standard.  Logic implementation is oftentimes (but not always) seperate from class definitions.
+    (Not always, because sometimes some reingorcement logic is pushed into getters/setters, or even constructors... which I would argue makes that particular
+    java object NOT simple, even if it is just a minor "if" statement).
+
+1: https://stackoverflow.com/a/17525472
+2: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model
+3: https://en.wikipedia.org/wiki/Prototype-based_programming

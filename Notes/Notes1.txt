@@ -1,6 +1,7 @@
 Tutorial source: https://youtu.be/Ke90Tje7VS0?list=WL
-To start the react app, run 'npm start' inside of the project folder.  The project will start at localhost:3000
 This Notes document covers everything (and more) about the tutorial source from time: 00:00:00 to time: 00:22:25
+
+To start the react app, run 'npm start' inside of the project folder.  The project will start at localhost:3000
 
 Installed 2 extensions into VS Code:
     - Simple React Snippets - I believe it assists in writing react code via auto-complete.

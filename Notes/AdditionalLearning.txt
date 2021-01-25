@@ -1,3 +1,23 @@
 This document is to keep track of everything that I DON'T know, and which requires research seperate from the tutorial.
 - CSS, CSS Classes, and Bootstrap
 - I could do some additional studying on HTML tags, and ES6 syntax beyond what is taught in the course.
+
+
+Resolved Questions:
+- Look up the "let" keyword in js.... is this and "const" the only (proper) way to declare vars?
+    - What's the difference between this syntax, and declaring something like "state = {}" in a class?
+        - "let" sets the scope to "block" level... using "let" in a method means you can only access that var from that method.
+        - Not using "let" sets it to a global scope... I still don't know how this interacts with JS classes.
+        - source: https://dev.to/zhiyueyi/variable-declaration-in-javascript-var-let-or-const-1789#:~:text=You%20should%20never%20ever%20declare,declaring%20a%20variable%20using%20const%20.
+        - In classes, it seems when you declare an object, it's local to the class, even without "let" keywords.
+            - Remember, classes are a declaration (prototype) of an object, rather than an instantiation, so that seems to change the rules lol...
+
+    - Furthermore, in the "state" object, sometimes you see additional "objects"/vars being declared with a different syntax:
+        state = { count: 0, tags: ["tag1", "tag2", "tag3"]}
+        ... what's with that?
+        - state is an object with additional properties.  It's kind of like declaring an instatiated version of a class (an object),
+            without there being a formal class that fits that object's model.  So, you're more or less declaring the class and object at the same time
+            (I think)... This also runs in-lieu of "JavaScript Object Notation", aka JSON.
+        - The object simply doesn't get a formal prototype, or Class definition.
+
+        -

@@ -1,5 +1,5 @@
 Tutorial source: https://youtu.be/Ke90Tje7VS0?list=WL&t=1344
-This Notes document covers everything (and more) about the tutorial source from time: 00:22:30 to time: xx:xx:xx
+This Notes document covers everything (and more) about the tutorial source from time: 00:22:30 to time: 00:54:56
 
 First thing past 22:30 is installed Bootstrap with the command:
     npm i bootstrap@4.1.1
@@ -43,12 +43,13 @@ Generating code with React Snippets installed in VSCode:
             - The div should be used to wrap sections of a document, while use spans to wrap small portions of text, images, etc.
     - Replaces 'Hello World' with '{}' inside of our returned ES6-syntaxed return method of our component's render() function.
         - Inside of '{}' you can add ANY valid javascript expressions.
+            - Note: Referring to this es6 line:  <span className="badge badge-primary m-2">{this.formatCount()}</span>
         - Our example does {this.state.count}... seems easy and straightforward to me.  My informal JS experience, 
             I wouldn't have thought of writing this, but reading it makes sense.
 
 38:00 Add a new func called formatCount()
     - Conditionally returns a string or a number....
-        -eugghhh <Throwup />
+        -eugghhh <Throwup />... should be more explicit in what it returns.
     - used a js ternary operator 
     - talks about "object destructuring", where he sets 'count' to a constant.... ?? He says he mentioned it earlier in the tutorial...
         Here are 2 tutorial sources that gets more in-depth about destructuring:
@@ -59,7 +60,7 @@ Generating code with React Snippets installed in VSCode:
     you can also use them as a value of a constant or variable.
 
 42:16 Applying a class to span element...
-    - name of element (he mans attribute?) is not 'class', it's 'className'.
+    - name of element (he means attribute?) is not 'class', it's 'className'.
     - these jsx elements get compiled into react elements, which are plain js objects.
     - We  cannot use the 'class' property on an object, because that's a reserved keywrod in js.
     - so, in jsx, instead of 'class', it's 'className'.
@@ -76,9 +77,48 @@ Generating code with React Snippets installed in VSCode:
     - Need to look up bootstrap doc to understand these classes more... maybe need to take a bootstrap tutorial.
     - Applying styles:
         - "For most part, it's best to use classes for performance and maintainability.
-        - "Might want to break rules if you knwo what you're doing and want to apply style to a specific elements."
+        - "Might want to break rules if you know what you're doing and want to apply style to a specific elements."
+    - Recall to your few days working with JS and JQuery, how we would select elemetns to mainpulate by either explicitly
+        calling a class or ID... I'm willing to bet that's how bootstrap works as well.
+        - So far, it seems that React is more concerned with building the HTML rather than manipulating it... However,
+            we'll probably soon see how the state affects the objects in virtual/actual DOM.
 
 44:26: "In JSX, there's a 'style' attribute that you might want to apply to a plain js obj."
     - This is a good section to review, because we delete the "styles" tag and won't use them for the rest of the tutorial.
 
-Left off at 46:38
+46:38: Rendering classes dynamically
+    - Bootstrap tidbits!
+        - class badge-primary = blue badge!
+        - class badge-warning = yellow badge!
+        - This is applied to span elements.
+    - So NOW, we get to dynamically render a class based on this.state.count !
+    - "let" keyword is for declaring non-constant variables.
+    - Code gets altered a lot here, so please watch tutorail at this point to follow along.
+        - Other than these notes, there aren't very many takeaways from this section... It's more of the same as "formatCount" was for practice.
+
+51:56: Rendering Lists
+    - js arrays declared with this syntax:
+        List : ['one', 'two', 'three']
+    - We write the following code:
+        <ul>    <-- This is an unordered list... in html, you would then put <li></li> elements for each instance in that unordered list -->
+            { this.state.tags.map(tag => <li>{tag}</li>)}
+        </ul>
+
+        - array.map js function
+            - tags is an array that was instantiated where you can't see.  map function is being called from tags array.
+            - The map() method creates a new array with the results of calling a function for every array element.
+            - So you pass in a function into the map method with one argument in that method.
+                - Each element of the array will then be passed into that function.
+            - https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_map 
+        - Arrow notation
+            - Basically, takes each element of the array and creates a one-line function, where an expression is returned.
+            - So: function(a) { return a + 100; } can be simplified into: a => a+100
+            - Reminds me of Java Lambda expressions a bit.
+            - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+        - using arrow notation, we point it to <li></li>.... 
+            - Remember, in js6, the <li></li> will be babel compiled into a React JS object, so we end up with an array of react js objects represting list elements.
+    - Finally, in each <ul> React element, we add a key attribute, so that react has a unique ID for each ul.
+        - Interestingly, this didn't get translated into the actual html code (aka actual DOM),
+             it's just tracked in the "Virtual" DOM, so that react knows which listed element needds to be updated.
+
+Left off at 54:56 of tutorial.
